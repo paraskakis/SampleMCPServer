@@ -9,4 +9,5 @@ Build an MCP (Model Context Protocol) server with the following specifications:
 7. **Server Setup:** Use `McpServer` from `@modelcontextprotocol/sdk/server/mcp.js` with name and version of this MCP Server
 8. **Frontend:** A simple landing page showing the server status and the MCP endpoint URL
 9. **Dependencies:** Install `@modelcontextprotocol/sdk` exactly as is. Use the latest MCP protocol version (2025-11-25).
-10. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
+10. **Implement DNS rebinding protection per MCP spec Transports § 2.0.1:** validate the Origin header on /mcp requests and reject unrecognized origins with 403.
+11. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
