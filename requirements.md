@@ -43,6 +43,8 @@ A simple personal task list manager. Users can create, view, update, and delete 
 ### 1. View tasks
 #### Name:
 `get_tasks`
+#### Title:
+`Get Tasks`
 #### Description:
 Use this tool to retrieve and display tasks from the task list. Returns matching tasks with their id, name, and current status. Supports filtering by status (todo, in_progress, done) or returns all tasks if no filter is provided. Use this when the user wants to see what's on their list, check progress, or find specific tasks.
 #### Parameters:
@@ -55,6 +57,8 @@ Use this tool to retrieve and display tasks from the task list. Returns matching
 ### 2. Create a task
 #### Name:
 `create_task`
+#### Title:
+`Create a Task`
 #### Description:
 Use this tool to add a new task to the task list. Requires a task name. Status defaults to "todo" unless specified. Use this when the user wants to add something to their list, remember to do something, or track a new item.
 #### Parameters:
@@ -68,6 +72,8 @@ Use this tool to add a new task to the task list. Requires a task name. Status d
 ### 3. Delete a task
 #### Name:
 `delete_task`
+#### Title:
+`Delete a Task`
 #### Description:
 Use this tool to permanently remove a task from the task list. Requires the task id to identify which task to delete. Use this when the user no longer needs a task tracked, wants to clean up their list, or explicitly asks to remove an item. This action cannot be undone.
 #### Parameters:
@@ -80,6 +86,8 @@ Use this tool to permanently remove a task from the task list. Requires the task
 ### 4. Update a task
 #### Name:
 `change_task`
+#### Title:
+`Update a Task`
 #### Description:
 Use this tool to update an existing task's name or status. Requires the task id to identify which task to change. Use this when the user wants to mark a task as done, start working on a task, rename a task, or change its status in any way. At least one of name or status must be provided.
 #### Parameters:
