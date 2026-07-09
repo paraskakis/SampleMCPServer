@@ -8,7 +8,7 @@ Build an MCP (Model Context Protocol) server with the following specifications:
 
 4. **Metadata:** Use the information in the requirements file but note, MCP Tool Output Schema is required:
 
-a. Every tool must include an outputSchema defined with Zod that matches the shape of data the tool returns. Derive the schema from the data structure described in the requirements — use descriptive `.describe()` strings on every field so models understand what each field means. The tool handler must always return both:
+a. Every tool must include an `outputSchema` defined with Zod that matches the shape of data the tool returns. Derive the schema from the data structure described in the requirements — use descriptive `.describe()` strings on every field so models understand what each field means. The tool handler must always return both:
 - `content` — an array with one text item containing the JSON-stringified result (backwards compatibility for older clients).
 - `structuredContent` — the structured result object matching the outputSchema.
 
