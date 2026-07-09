@@ -3,7 +3,10 @@ Build an MCP (Model Context Protocol) server with the following specifications:
 1. **Transport:** Use the Streamable HTTP transport from `@modelcontextprotocol/sdk/server/streamableHttp.js` (NOT SSE - that's deprecated as of March 2025)
 2. **Endpoint:** Create a single `/mcp` endpoint using `app.all("/mcp", ...)` that handles both GET and POST requests on the same path
 3. **Tools:** Register the tools described in the attached requirements file
-4. **Metadata:** Use the information in the requirements file
+4. **Metadata:** Use the information in the requirements file but note, MCP Tool Output Schema is required:
+Every tool must include an outputSchema defined with Zod that matches the shape of data the tool returns. Derive the schema from the data structure described in the requirements — use descriptive `.describe()` strings on every field so models understand what each field means. The tool handler must always return both:
+`content` — an array with one text item containing the JSON-stringified result (backwards compatibility for older clients)
+`structuredContent` — the structured result object matching the outputSchema
 5. **Data:** No persistence needed for now, use in-memory storage
 6. **Session Management:** Use a Map to store transports by session ID. For new POST requests without a session ID, create a new `StreamableHTTPServerTransport` with a `sessionIdGenerator` that returns a UUID. For requests with an existing session ID header (`mcp-session-id`), reuse the existing transport.
 7. **Server Setup:** Use `McpServer` from `@modelcontextprotocol/sdk/server/mcp.js` with name and version of this MCP Server
