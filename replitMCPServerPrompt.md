@@ -4,9 +4,11 @@ Build an MCP (Model Context Protocol) server with the following specifications:
 2. **Endpoint:** Create a single `/mcp` endpoint using `app.all("/mcp", ...)` that handles both GET and POST requests on the same path
 3. **Tools:** Register the tools described in the attached requirements file
 4. **Metadata:** Use the information in the requirements file but note, MCP Tool Output Schema is required:
+
 a. Every tool must include an outputSchema defined with Zod that matches the shape of data the tool returns. Derive the schema from the data structure described in the requirements — use descriptive `.describe()` strings on every field so models understand what each field means. The tool handler must always return both:
 - `content` — an array with one text item containing the JSON-stringified result (backwards compatibility for older clients).
 - `structuredContent` — the structured result object matching the outputSchema.
+
 b. When registering tools with `server.registerTool()`, the `title` field must be a top-level property of the config object — not nested inside `annotations`. Example: `{ title: "My Tool", description: "...", inputSchema: ..., annotations: { ... } }`
 6. **Data:** No persistence needed for now, use in-memory storage
 7. **Session Management:** Use a Map to store transports by session ID. For new POST requests without a session ID, create a new `StreamableHTTPServerTransport` with a `sessionIdGenerator` that returns a UUID. For requests with an existing session ID header (`mcp-session-id`), reuse the existing transport.
