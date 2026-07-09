@@ -14,16 +14,16 @@ a. Every tool must include an outputSchema defined with Zod that matches the sha
 
 b. When registering tools with `server.registerTool()`, the `title` field must be a top-level property of the config object — not nested inside `annotations`. Example: `{ title: "My Tool", description: "...", inputSchema: ..., annotations: { ... } }`
 
-6. **Data:** No persistence needed for now, use in-memory storage
+5. **Data:** No persistence needed for now, use in-memory storage
 
-7. **Session Management:** Use a Map to store transports by session ID. For new POST requests without a session ID, create a new `StreamableHTTPServerTransport` with a `sessionIdGenerator` that returns a UUID. For requests with an existing session ID header (`mcp-session-id`), reuse the existing transport.
+6. **Session Management:** Use a Map to store transports by session ID. For new POST requests without a session ID, create a new `StreamableHTTPServerTransport` with a `sessionIdGenerator` that returns a UUID. For requests with an existing session ID header (`mcp-session-id`), reuse the existing transport.
 
-8. **Server Setup:** Use `McpServer` from `@modelcontextprotocol/sdk/server/mcp.js` with name and version of this MCP Server
+7. **Server Setup:** Use `McpServer` from `@modelcontextprotocol/sdk/server/mcp.js` with name and version of this MCP Server
 
-9. **Frontend:** A simple landing page showing the server status and the MCP endpoint URL
+8. **Frontend:** A simple landing page showing the server status and the MCP endpoint URL
 
-10. **Dependencies:** Install `@modelcontextprotocol/sdk` exactly as is. Use the latest MCP protocol version (2025-11-25).
+9. **Dependencies:** Install `@modelcontextprotocol/sdk` exactly as is. Use the latest MCP protocol version (2025-11-25).
 
-11. **Implement DNS rebinding protection per MCP spec Transports § 2.0.1:** validate the Origin header on /mcp requests and reject unrecognized origins with 403.
+10. **Implement DNS rebinding protection per MCP spec Transports § 2.0.1:** validate the Origin header on /mcp requests and reject unrecognized origins with 403.
 
-12. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
+11. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
