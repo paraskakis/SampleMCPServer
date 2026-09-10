@@ -53,6 +53,7 @@ Use this tool to retrieve and display tasks from the task list. Returns matching
 - Set `readOnlyHint` to `true`
 - Set `destructiveHint` to `false`
 - Set `openWorldHint` to `false`
+- Set `idempotentHint` to `true`
 
 ### 2. Create a task
 #### Name:
@@ -68,6 +69,7 @@ Use this tool to add a new task to the task list. Requires a task name. Status d
 - Set `readOnlyHint` to `false`
 - Set `destructiveHint` to `false`
 - Set `openWorldHint` to `false`
+- Set `idempotentHint` to `false`
 
 ### 3. Delete a task
 #### Name:
@@ -82,6 +84,7 @@ Use this tool to permanently remove a task from the task list. Requires the task
 - Set `readOnlyHint` to `false`
 - Set `destructiveHint` to `true`
 - Set `openWorldHint` to `false`
+- Set `idempotentHint` to `true`
 
 ### 4. Update a task
 #### Name:
@@ -98,4 +101,5 @@ Use this tool to update an existing task's name or status. Requires the task id 
 - Set `readOnlyHint` to `false`
 - Set `destructiveHint` to `false`
 - Set `openWorldHint` to `false`
+- Set `idempotentHint` to `true`
 
