@@ -22,8 +22,10 @@ b. When registering tools with `server.registerTool()`, the `title` field must b
 
 8. **Frontend:** A simple landing page showing the server status and the MCP endpoint URL
 
-9. **Dependencies:** Install `@modelcontextprotocol/sdk` exactly as is. Use the latest MCP protocol version (2025-11-25).
+9. **Dependencies:** Install `@modelcontextprotocol/sdk` exactly as is. Use the MCP protocol version 2025-11-25.
 
 10. **Implement DNS rebinding protection per MCP spec Transports § 2.0.1:** validate the Origin header on /mcp requests and reject unrecognized origins with 403.
 
-11. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
+11. **JSON-RPC validation**: Before passing requests to the MCP transport, distinguish malformed JSON (-32700 Parse error) from valid JSON with an invalid JSON-RPC envelope (-32600 Invalid Request). Return HTTP 400 and id: null in both cases. Use the SDK’s official JSON-RPC message schema when available, and test both cases.
+
+12. **Very Important, Do Not Skip:** Build this inside a React web app (not an API artifact) so I can see a preview with a URL bar in Replit. The React app should just be a simple static landing page. The MCP server logic goes in the shared Express API server at /mcp. Do not create any design canvas or mockup artifacts.
