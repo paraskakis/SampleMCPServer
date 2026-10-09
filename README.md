@@ -11,3 +11,5 @@ A simple Task Manager MCP Server built as a hands-on exercise for the [Build Wha
 5. Hit Publish to get a public URL
 6. Verify in [MCP Debugger](https://mcpdebugger.dev/)
 7. Run Evals in [MCPJam](https://app.mcpjam.com/)
+
+**NOTICE:** No auth, persistence, rate limiting - beware, susceptible to prompt injection - for testing purposes only
