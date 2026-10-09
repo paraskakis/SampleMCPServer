@@ -1,6 +1,6 @@
 # Sample MCP Server
 
-A simple Task Manager MCP Server built as a hands-on exercise for the [Build AI-Ready APIs](https://maven.com/emmanuel/build-ai-ready-apis) course.
+A simple Task Manager MCP Server built as a hands-on exercise for the [Build What Agents Want](https://maven.com/emmanuel/build-ai-ready-apis) course.
 
 ## How to Build
 
